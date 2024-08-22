@@ -4,7 +4,7 @@
 
 ![Mod Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)  
 ![SMAPI](https://img.shields.io/badge/SMAPI-3.0.0%2B-blue.svg)  
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License](https://img.shields.io/github/license/brog-io/AutoPetter)
 
 ## Description
 
