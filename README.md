@@ -64,6 +64,6 @@ If you encounter any issues, please report them on the [GitHub Issues](https://g
 
 ## License
 
-This mod is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This mod is licensed under the GPLv3 License. See the [LICENSE](LICENSE) file for more information.
 
 ---
