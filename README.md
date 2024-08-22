@@ -1,5 +1,3 @@
-Certainly! Here's the README in a copy-paste-friendly format:
-
 ---
 
 # AutoPetter Mod
