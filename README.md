@@ -8,7 +8,7 @@
 
 ## Description
 
-The **AutoPetter** mod automatically pets your farm animals and pets (cats and dogs) in Stardew Valley. No more running around to each animal to show them some love—this mod does it for you, ensuring your animals stay happy and produce the best quality goods.
+The **AutoPetter** mod automatically pets your farm animals and pets in Stardew Valley. No more running around to each animal to show them some love—this mod does it for you, ensuring your animals stay happy and produce the best quality goods.
 
 ## Features
 
