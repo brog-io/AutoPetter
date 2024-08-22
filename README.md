@@ -13,12 +13,12 @@ The **AutoPetter** mod automatically pets your farm animals and pets in Stardew 
 ## Features
 
 - **Automatically pet farm animals**: Ensures that all your farm animals are petted every day, maximizing their affection and productivity.
-- **Automatically pet pets**: Ensures that your pet (cat or dog) is petted every day, contributing to your pet's happiness.
+- **Automatically pet pets**: Ensures that your pet is petted every day, contributing to your pet's happiness.
 
 ## Installation
 
 1. **Install the latest version of [SMAPI](https://smapi.io/)**.
-2. **Download the `AutoPetter` mod** from [Nexus Mods](https://www.nexusmods.com/), or another mod repository.
+2. **Download the `AutoPetter` mod** from [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/27203), or another mod repository.
 3. **Extract the mod folder** into your `Stardew Valley/Mods` directory.
 4. **Launch Stardew Valley** with SMAPI.
 
