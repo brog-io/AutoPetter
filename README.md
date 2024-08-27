@@ -53,7 +53,7 @@ If you encounter any issues, please report them on the [GitHub Issues](https://g
 
 ## Compatibility
 
-- **Stardew Valley 1.5+**: Compatible with the latest version of Stardew Valley.
+- **Stardew Valley 1.6**: Compatible with the latest version of Stardew Valley.
 - **SMAPI 3.0.0+**: Required.
 - **Multiplayer**: Not tested.
 
