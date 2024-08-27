@@ -1,8 +1,8 @@
 {
   "Name": "AutoPetter",
   "Author": "Brogio",
-  "Version": "1.0.0",
-  "Description": "Automatically pets animals and pets.",
+  "Version": "1.1.0",
+  "Description": "Automatically pets animals and pets with configurable friendship multiplier.",
   "UniqueID": "Brogio.AutoPetter",
   "EntryDll": "AutoPetter.dll",
   "MinimumApiVersion": "3.0.0",
@@ -15,6 +15,14 @@
     "PetPets": {
       "AllowValues": "true, false",
       "Default": true
+    },
+    "FriendshipMultiplier": {
+      "AllowValues": {
+        "min": 0.1,
+        "max": 5.0,
+        "interval": 0.1
+      },
+      "Default": 1.0
     }
   },
   "Dependencies": [

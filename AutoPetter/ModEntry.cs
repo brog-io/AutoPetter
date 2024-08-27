@@ -14,6 +14,7 @@ namespace AutoPetMod
     {
         public bool PetAnimals { get; set; } = true;
         public bool PetPets { get; set; } = true;
+        public float FriendshipMultiplier { get; set; } = 1.0f;
     }
 
     public class ModEntry : Mod
@@ -58,6 +59,17 @@ namespace AutoPetMod
                 getValue: () => _config.PetPets,
                 setValue: value => _config.PetPets = value
             );
+
+            configMenu.AddNumberOption(
+                mod: ModManifest,
+                name: () => "Friendship Multiplier",
+                tooltip: () => "Multiplier for friendship gained from petting (1.0 is default)",
+                getValue: () => _config.FriendshipMultiplier,
+                setValue: value => _config.FriendshipMultiplier = value,
+                min: 0.1f,
+                max: 5.0f,
+                interval: 0.1f
+            );
         }
 
         private void OnDayStarted(object? sender, DayStartedEventArgs e)
@@ -79,11 +91,29 @@ namespace AutoPetMod
                     {
                         if (!animal.wasPet.Value)
                         {
-                            animal.pet(Game1.player);
+                            PetAnimalWithMultiplier(animal, Game1.player);
                         }
                     }
                 }
             }
+        }
+
+        private void PetAnimalWithMultiplier(FarmAnimal animal, Farmer player)
+        {
+            // Store the original friendshipTowardFarmer value
+            int originalFriendship = animal.friendshipTowardFarmer.Value;
+
+            // Call the original pet method
+            animal.pet(player);
+
+            // Calculate the friendship increase
+            int friendshipIncrease = animal.friendshipTowardFarmer.Value - originalFriendship;
+
+            // Apply the multiplier
+            int adjustedIncrease = (int)(friendshipIncrease * _config.FriendshipMultiplier);
+
+            // Set the new friendship value
+            animal.friendshipTowardFarmer.Value = originalFriendship + adjustedIncrease;
         }
 
         private void PetAllPets()
@@ -92,9 +122,27 @@ namespace AutoPetMod
             {
                 if (character is Pet pet && !pet.lastPetDay.Equals(Game1.Date))
                 {
-                    pet.checkAction(Game1.player, Game1.currentLocation);
+                    PetPetWithMultiplier(pet, Game1.player);
                 }
             }
+        }
+
+        private void PetPetWithMultiplier(Pet pet, Farmer player)
+        {
+            // Store the original friendshipTowardFarmer value
+            int originalFriendship = pet.friendshipTowardFarmer.Value;
+
+            // Call the original checkAction method (which includes petting logic for pets)
+            pet.checkAction(player, Game1.currentLocation);
+
+            // Calculate the friendship increase
+            int friendshipIncrease = pet.friendshipTowardFarmer.Value - originalFriendship;
+
+            // Apply the multiplier
+            int adjustedIncrease = (int)(friendshipIncrease * _config.FriendshipMultiplier);
+
+            // Set the new friendship value
+            pet.friendshipTowardFarmer.Value = originalFriendship + adjustedIncrease;
         }
     }
 }
